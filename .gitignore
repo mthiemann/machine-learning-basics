@@ -1,0 +1,16 @@
+# Byte-compiled
+__pycache__/
+
+# IDE specific
+.idea
+octave-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Coursera course specific folders
+token.mat
+submit.m
+
+# Logs 
+logs
