@@ -30,11 +30,8 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
-
-
-
-
-
+A = sigmoid(X * all_theta');  % size(A) = m x k 
+[~, p] = max(A, [], 2);  % max index of each row = classification
 
 % =========================================================================
 
