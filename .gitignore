@@ -5,8 +5,9 @@ __pycache__/
 .idea
 octave-workspace
 
-# Jupyter Notebook
+# Backup Files
 .ipynb_checkpoints
+.m~
 
 # Coursera course specific folders
 token.mat
