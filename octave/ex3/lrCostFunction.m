@@ -36,10 +36,10 @@ grad = zeros(size(theta));
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
-hyp = sigmoid(X*theta)
-theta(1) = 0  % No regularization for bias value
+hyp = sigmoid(X*theta);
+theta(1) = 0;  % No regularization for bias value
 
-J = 1/m*sum(-y.*log(hyp) - (1-y).*log(1-hyp)) + lambda / (2*m)*sum(theta.^2)
+J = 1/m*sum(-y.*log(hyp) - (1-y).*log(1-hyp)) + lambda / (2*m)*sum(theta.^2);
 grad = 1/m*(X'*(hyp-y)) + lambda / m * theta;
 
 
