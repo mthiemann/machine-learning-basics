@@ -16,23 +16,23 @@ If not already in your path, add the `helpers` folder to your python path.
 
 ## Table of Contents
 
-### *Assignment 1*: [Linear Regression (Single and multi variable)](assignment-sheets/ex1.pdf)
+### *Assignment 1*: [Linear Regression - Single and multi variable (PDF)](assignment-sheets/ex1.pdf)
 
 * [Octave](octave/ex1)
 * [Tensorflow: Jupyter](tensorflow/ex1/jupyter)
 * [Tensorflow: Python](tensorflow/ex1/python)
 
-### *Assignment 2*: [Logistic Regression (No Regularization and Regularization)](assignment-sheets/ex2.pdf)
+### *Assignment 2*: [Logistic Regression - No Regularization and Regularization (PDF)](assignment-sheets/ex2.pdf)
 
 * [Octave](octave/ex2)
 * [Tensorflow: Jupyter](tensorflow/ex2/jupyter)
 * [Tensorflow: Python](tensorflow/ex2/python)
 
-### *Assignment 3*: [Neural Networks](assignment-sheets/ex3.pdf)
+### *Assignment 3*: [Mulit-Class Classification and Neural Networks (PDF)](assignment-sheets/ex3.pdf)
 
 * [Octave](octave/ex3)
 
 
-### *Assignment 4*: [Neural Networks](assignment-sheets/ex4.pdf)
+### *Assignment 4*: [Neural Networks Learning (PDF)](assignment-sheets/ex4.pdf)
 
 * In Progress...
