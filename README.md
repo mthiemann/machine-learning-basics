@@ -31,3 +31,8 @@ If not already in your path, add the `helpers` folder to your python path.
 ### *Assignment 3*: [Neural Networks](assignment-sheets/ex3.pdf)
 
 * [Octave](octave/ex3)
+
+
+### *Assignment 4*: [Neural Networks](assignment-sheets/ex4.pdf)
+
+* In Progress...
