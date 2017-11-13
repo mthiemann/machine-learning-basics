@@ -32,7 +32,7 @@ num_labels = 10;          % 10 labels, from 1 to 10
 % Load Training Data
 fprintf('Loading and Visualizing Data ...\n')
 
-load('../../data/ex4/ex4data1.mat');
+load('ex4data1.mat');
 m = size(X, 1);
 
 % Randomly select 100 data points to display
@@ -56,6 +56,7 @@ load('ex4weights.mat');
 
 % Unroll parameters 
 nn_params = [Theta1(:) ; Theta2(:)];
+
 
 %% ================ Part 3: Compute Cost (Feedforward) ================
 %  To the neural network, you should first start by implementing the

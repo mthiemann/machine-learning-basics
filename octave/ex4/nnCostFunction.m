@@ -28,7 +28,7 @@ m = size(X, 1);
 % You need to return the following variables correctly 
 J = 0;
 Theta1_grad = zeros(size(Theta1));
-Theta2_grad = zeros(size(Theta2));
+Theta2_grad = zeros(size(Theta2)); 
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: You should complete the code by working through the
@@ -62,23 +62,56 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
+% Part 1: Feedforward and cost
+
+% calculate predictions for all examples (one prediction has a shape of: num_labels x 1)
+a1 = [ones(m, 1) X];
+z2 = a1 * Theta1';
+a2 = [ones(m, 1) sigmoid(z2)];
+z3 = a2 * Theta2';
+a3 = sigmoid(z3);
+
+% setup target matrix for all examples (row = one target)
+target_labels = zeros(m, num_labels);
+for i = 1:m
+	target_labels(i, y(i)) = 1;
+endfor
+
+% setup cost matrix for all examples and divide by number of examples
+J = sum(sum(-target_labels.*log(a3) - (1-target_labels).*log(1-a3))) / m;
+
+% add regularization
+J += lambda/(2*m)*(sumsq(Theta1(:, 2:end)(:))+sumsq(Theta2(:, 2:end)(:)));
 
 
+% Part 2: Backpropagation
 
+% calculate the delta matrix for the output layer
+delta_matrix_3 = a3 - target_labels;
 
+% calculate the delta matrix for layer 2 (each row represents the weighted sum of error for each input of the previous layer
+%	times the respective grad. of the activation function)
+delta_matrix_2 = delta_matrix_3 * Theta2(:, 2:end) .* sigmoidGradient(z2);
 
+% compute gradients
+for i = 1:m
+	Theta2_grad += delta_matrix_3(i, :)' * a2(i, :);
+	Theta1_grad += delta_matrix_2(i, :)' * a1(i, :);
+endfor
 
+Theta1_grad = Theta1_grad .* 1/m;
+Theta2_grad = Theta2_grad .* 1/m;
 
+% Part 3: Regularized
 
+% compute regularization terms for the weights except the bias term
+reg = lambda/m;
+Theta1_reg = [zeros(size(Theta1, 1), 1) (Theta1(:, 2:end) .* reg)];
+Theta2_reg = [zeros(size(Theta2, 1), 1) (Theta2(:, 2:end) .* reg)];
 
-
-
-
-
-
-
-
-
+% add regularization terms to the gradient
+Theta1_grad += Theta1_reg;
+Theta2_grad += Theta2_reg;
 
 % -------------------------------------------------------------
 
